@@ -77,12 +77,13 @@ header {
 .email-input {
 	background-color: white;
 	border : 1px solid var(--desaturate-red);
-	color : var(--desaturate-red);
+	color : var(--dark-grayish-red);
 	padding: .8rem 1.5rem;
 	border-radius: 3rem;
 	font-size: .9rem;
 	width: 70%;
 	margin-top: 1rem;
+	outline: none;
 }
 
 .icon-arrow {
@@ -97,8 +98,13 @@ header {
 	border-radius: 3rem;
 	border: none;
 	outline: none;
+	cursor: pointer;
+	transition: .3s linear;
 }
 
+.icon-arrow:hover {
+	transform: scale(1.2);
+}
 .right-side {
 	grid-area: right-side;
 	display: flex;
@@ -114,6 +120,23 @@ header {
 	display: none;
 }
 
+.invalid-icon {
+	display: none;
+	position: absolute;
+	bottom: 10%;
+	right: 43%;
+	z-index: 2;
+}
+
+.invalid-input {
+	border: 1px solid var(--soft-red);
+}
+
+.message-invalid {
+	color: var(--desaturate-red);
+	margin-left: 1.5rem;
+	margin-top: .5rem;
+}
 /*mobile view*/
 
 @media screen and (max-width : 600px) {
@@ -164,6 +187,11 @@ header {
 	.hero-img-mobile {
 		display: block;
 		width: 100%;
+	}
+
+	.invalid-icon {
+		bottom: 5%;
+		right: 32%;
 	}
 /* hiddent mobile view	*/
 	.hero-img {
